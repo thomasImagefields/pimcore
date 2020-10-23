@@ -538,6 +538,7 @@ pimcore.report.custom.report = Class.create(pimcore.report.abstract, {
     },
 
     createCsv: function (btn, exportFile, offset) {
+        var proxy = this.store.getProxy();
         let filterData = this.store.getFilters().items;
         Ext.Ajax.request({
             url: Routing.generate('pimcore_admin_reports_customreport_createcsv'),
